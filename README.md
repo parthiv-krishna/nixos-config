@@ -14,7 +14,10 @@ git clone git@github.com:parthiv-krishna/nixos-config
 # Option 2: HTTPS (should 'just work')
 git clone https://github.com/parthiv-krishna/nixos-config
 
-# Run the setup
+# Run the setup script. Replace HOST with one of the hosts in system/hosts
 cd nixos-config
-./setup.sh
+./setup.sh HOST
 ```
+
+As long as all additional configuration is imported into `system/common/common.nix`
+and `system/hosts/HOST/HOST.nix`, it should automatically be detected by `nixos-rebuild`.
