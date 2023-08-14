@@ -4,4 +4,8 @@
 
 {
   networking.hostName = "icicle";
+
+  imports = [
+    ./framework13-intel13thgen.nix
+  ];
 }
