@@ -7,7 +7,10 @@
     enable = true;
 
     # KDE Plasma 5
-    displayManager.sddm.enable = true;
+    displayManager = {
+      sddm.enable = true;
+      defaultSession = "plasmawayland"; # use Wayland
+    };
     desktopManager.plasma5.enable = true;
 
     # Configure keymap
