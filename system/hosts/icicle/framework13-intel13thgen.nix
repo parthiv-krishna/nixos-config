@@ -11,6 +11,24 @@
 
   # disable ambient light sensor so the brightness keys work
   boot.blacklistedKernelModules = [ "hid-sensor-hub" ];
+  hardware.acpilight.enable = lib.mkDefault true;
+
+  # set up brightness and airplane mode keys
+  systemd.services.bind-keys-driver = {
+    description = "Set up brightness and airplane mode keys";
+    wantedBy = [ "default.target" ];
+    after = [ "network.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+    script = ''
+      if [ -e /sys/bus/i2c/devices/i2c-FRMW0001:00 -a ! -e /sys/bus/i2c/drivers/i2c_hid_acpi/i2c-FRMW0001:00 ]; then
+        echo i2c-FRMW0001:00 > /sys/bus/i2c/drivers/i2c_hid_acpi/bind
+        ls -lad /sys/bus/i2c/devices/i2c-*:* /sys/bus/i2c/drivers/i2c_hid_acpi/i2c-*:*
+      fi
+    '';
+  };
 
   boot.kernelParams = [
     # power saving: RAM deep sleep
