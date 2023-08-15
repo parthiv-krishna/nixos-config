@@ -10,6 +10,9 @@
       ./system.nix
     ];
 
+  # enable nix-command and flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.parthiv = {
     isNormalUser = true;
