@@ -15,11 +15,6 @@
     isNormalUser = true;
     description = "Parthiv Krishna";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      kate
-    #  thunderbird
-    ];
   };
 
   # This value determines the NixOS release from which the default

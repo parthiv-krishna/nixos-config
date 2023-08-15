@@ -7,12 +7,14 @@
   environment.systemPackages = with pkgs; [
     htop
     git
+    home-manager
     neofetch
+    neovim
     powertop
     tmux
     trash-cli
     tree
-    vim
     wget
   ];
 }
+
