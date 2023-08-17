@@ -3,6 +3,10 @@
 { config, pkgs, ...}:
 
 {
+  imports = [
+   ./common.nix
+  ];
+
   services.xserver = {
     enable = true;
 

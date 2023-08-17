@@ -4,6 +4,11 @@
 { config, pkgs, lib, ...}:
 
 {
+  imports = [
+    ./common.nix
+  ];
+
+
   # enable headset mic input
   boot.extraModprobeConfig = ''
     options snd-hda-intel model=dell-headset-multi
