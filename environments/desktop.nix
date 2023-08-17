@@ -21,4 +21,14 @@
     layout = "us";
     xkbVariant = "";
   };
+
+  home-manager.users.parthiv = {
+    home.packages = with pkgs; [
+      firefox
+      signal-desktop
+      slack
+      spotify
+      thunderbird
+    ];
+  };
 }

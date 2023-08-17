@@ -37,7 +37,7 @@
 
   boot.kernelParams = [
     # power saving: RAM deep sleep
-    "mem_sleep_default=deep" 
+    "mem_sleep_default=deep"
     # power saving: disable NVMe ACPI
     "nvme.noacpi=1"
   ];
@@ -46,7 +46,7 @@
   services.fstrim.enable = lib.mkDefault true;
 
   # use TLP instead of power-profiles-daemon
-  services.power-profiles-daemon.enable = lib.mkForce false;  
+  services.power-profiles-daemon.enable = lib.mkForce false;
   services.tlp.enable = lib.mkDefault true;
 
   # intel microcode

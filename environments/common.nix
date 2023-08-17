@@ -8,20 +8,16 @@ in
   imports = [
     (import "${home-manager}/nixos")
   ];
-  
+
   nixpkgs.config.allowUnfree = true;
 
   home-manager.users.parthiv = {
     home.packages = with pkgs; [
       htop
-      firefox
       git
       neofetch
       neovim
       powertop
-      signal-desktop
-      spotify
-      thunderbird
       tmux
       trash-cli
       tree
