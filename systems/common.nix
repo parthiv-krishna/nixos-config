@@ -1,14 +1,14 @@
 # core system configuration
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   ################
   ## Bootloader ##
   ################
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  hardware.enableRedistributableFirmware = true;
+  boot.loader.systemd-boot.enable = lib.mkDefault true;
+  boot.loader.efi.canTouchEfiVariables = lib.mkDefault true;
+  hardware.enableRedistributableFirmware = lib.mkDefault true;
 
   ################
   # Localization #
