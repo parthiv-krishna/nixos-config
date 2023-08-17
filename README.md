@@ -19,5 +19,5 @@ cd nixos-config
 ./setup.sh HOST
 ```
 
-As long as all additional configuration is imported into `system/common/common.nix`
-and `system/hosts/HOST/HOST.nix`, it should automatically be detected by `nixos-rebuild`.
+As long as all additional configuration changes are made or imported into
+`hosts/HOST.nix`, it should automatically be detected by `nixos-rebuild`.
