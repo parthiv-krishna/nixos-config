@@ -6,6 +6,6 @@
   networking.hostName = "icicle";
 
   imports = [
-    ./framework13-intel13thgen.nix
+    ../hardware/framework13-intel13thgen.nix
   ];
 }
