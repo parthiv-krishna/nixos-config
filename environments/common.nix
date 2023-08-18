@@ -6,7 +6,6 @@ let
 in {
   imports = [
     (import "${home-manager}/nixos")
-    ./neovim.nix
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -19,15 +18,20 @@ in {
   # unfortunately I still use some unfree software. working on it.
   nixpkgs.config.allowUnfree = true;
 
-  # core packages useful on any system
   home-manager.users.parthiv = {
+    imports = [
+      ./fonts.nix
+      ./nixvim.nix
+    ];
+
     home.stateVersion = "23.05";
 
+    # core packages useful on any system
     home.packages = with pkgs; [
       htop
       git
       neofetch
-      # neovim # installed in ./neovim.nix
+      # neovim # installed in ./nixvim.nix
       powertop
       tmux
       trash-cli
