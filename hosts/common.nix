@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+# basic config to bootstrap a complete one
 
-{
-  networking.hostName = "nixos";
+{ ... }: {
+  networking.hostName = "icicle";
 
   imports = [
-    ../systems/common.nix
+    ../platforms/common.nix
     ../environments/common.nix
   ];
 }

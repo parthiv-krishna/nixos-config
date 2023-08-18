@@ -1,9 +1,7 @@
 # setup specific to Framework Laptop 13 (Intel 13th Gen)
 # based on https://github.com/FrameworkComputer/linux-docs/blob/main/Ubuntu23.04-Manual-Setup-13thGen.md
 
-{ config, pkgs, lib, ...}:
-
-{
+{ config, lib, pkgs, ... }: {
   imports = [
     ./common.nix
   ];
@@ -47,7 +45,7 @@
 
   # use TLP instead of power-profiles-daemon
   services.power-profiles-daemon.enable = lib.mkForce false;
-  services.tlp.enable = lib.mkDefault true;
+  services.tlp.enable = lib.mkForce true;
 
   # intel microcode
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

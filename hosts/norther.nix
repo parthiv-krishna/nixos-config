@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+# virtualbox virtual machine
 
-{
-  networking.hostName = "nixos";
+{ ... }: {
+  networking.hostName = "norther";
 
   imports = [
-    ../systems/virtualbox.nix
+    ../platforms/virtualbox.nix
     ../environments/desktop.nix
   ];
 }

@@ -1,8 +1,6 @@
 # desktop environment configuration
 
-{ config, pkgs, ...}:
-
-{
+{ pkgs, ... }: {
   imports = [
    ./common.nix
   ];
@@ -32,3 +30,4 @@
     ];
   };
 }
+
