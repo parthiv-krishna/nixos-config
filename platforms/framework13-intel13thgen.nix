@@ -6,6 +6,8 @@
     ./common.nix
   ];
 
+  # bluetooth
+  hardware.bluetooth.enable = true;
 
   # enable headset mic input
   boot.extraModprobeConfig = ''
