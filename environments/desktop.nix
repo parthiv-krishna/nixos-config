@@ -21,6 +21,10 @@
   };
 
   home-manager.users.parthiv = {
+    imports = [
+      ./packages/alacritty.nix
+    ];
+
     home.packages = with pkgs; [
       firefox
       signal-desktop

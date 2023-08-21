@@ -21,7 +21,8 @@ in {
   home-manager.users.parthiv = {
     imports = [
       ./fonts.nix
-      ./nixvim.nix
+      ./packages/git.nix
+      ./packages/nixvim.nix
     ];
 
     home.stateVersion = "23.05";
@@ -29,14 +30,13 @@ in {
     # core packages useful on any system
     home.packages = with pkgs; [
       htop
-      git
       neofetch
-      # neovim # installed in ./nixvim.nix
       powertop
       tmux
       trash-cli
       tree
       wget
+      xclip
     ];
   };
 }

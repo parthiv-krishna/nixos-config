@@ -35,6 +35,10 @@ in {
       tabstop = 2;
     };
 
+    colorschemes = {
+      one.enable = true;
+    };
+
     plugins = {
       # tools
       airline.enable = true;
