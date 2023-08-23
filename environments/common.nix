@@ -21,6 +21,7 @@ in {
   home-manager.users.parthiv = {
     imports = [
       ./fonts.nix
+      ./packages/bash.nix
       ./packages/git.nix
       ./packages/nixvim.nix
     ];

@@ -36,12 +36,12 @@ in {
     };
 
     colorschemes = {
-      one.enable = true;
+      gruvbox.enable = true;
     };
 
     plugins = {
       # tools
-      airline.enable = true;
+      lightline.enable = true;
       nvim-tree.enable = true;
 
       # languages

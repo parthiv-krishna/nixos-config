@@ -7,6 +7,30 @@
     userName = "Parthiv Krishna";
     userEmail = "parthiv-krishna@users.noreply.github.com";
 
+    # use difftastic syntax highlighter
+    difftastic.enable = true;
+
+    extraConfig = {
+      core = {    
+        # error on trailing whitespace
+        whitespace = "trailing-space,space-before-tab";
+      };
+
+      init = {
+        defaultBranch = "main";
+      };
+
+      url = {
+        # shortcutes for github
+        "git@github.com:" = {
+          insteadOf = "gh:";
+        };
+        "https://github.com/" = {
+          insteadOf = "gh/";
+        };
+      };
+    };
+
     aliases = {
       a = "add";
       ap = "add -p";
@@ -37,6 +61,12 @@
       s = "status";
       su = "status -uno";
     };
+
+    ignores = [
+      # vim stuff
+      "*~"
+      "*.swp"
+    ];
   };
 }
 
