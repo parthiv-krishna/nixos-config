@@ -41,10 +41,19 @@ in {
 
     plugins = {
       # tools
+      barbar.enable = true;
+      fugitive.enable = true;
+      gitsigns.enable = true;
       lightline.enable = true;
+      mark-radar.enable = true;
       nvim-tree.enable = true;
+      telescope.enable = true;
+      tmux-navigator.enable = true;
+      todo-comments.enable = true;
+      treesitter.enable = true;
 
       # languages
+      markdown-preview.enable = true;
       nix.enable = true;
     };
   };

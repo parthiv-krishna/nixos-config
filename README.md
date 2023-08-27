@@ -14,7 +14,7 @@ git clone git@github.com:parthiv-krishna/nixos-config
 # Option 2: HTTPS (should 'just work')
 git clone https://github.com/parthiv-krishna/nixos-config
 
-# Run the setup script. Replace HOST with one of the hosts in system/hosts
+# Run the setup script. Replace HOST with one of the hosts in hosts/
 cd nixos-config
 ./setup.sh HOST
 ```

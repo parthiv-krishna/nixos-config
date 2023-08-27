@@ -44,8 +44,8 @@
       bsg = "bisect good";
 
       c = "commit";
-      ca = "commit amend --no-edit";
-      cam = "commit amend -m";
+      ca = "commit --amend --no-edit";
+      cam = "commit --amend -m";
       cm = "commit -m";
 
       co = "checkout";

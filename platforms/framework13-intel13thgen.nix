@@ -49,6 +49,9 @@
   services.power-profiles-daemon.enable = lib.mkForce false;
   services.tlp.enable = lib.mkForce true;
 
+  # nixos power management
+  powerManagement.enable = lib.mkForce true;
+
   # intel microcode
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

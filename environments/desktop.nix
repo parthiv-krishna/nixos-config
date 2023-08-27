@@ -26,11 +26,13 @@
     ];
 
     home.packages = with pkgs; [
+      discord
       firefox
       signal-desktop
       slack
       spotify
       thunderbird
+      zoom-us
     ];
   };
 }

@@ -24,6 +24,7 @@ in {
       ./packages/bash.nix
       ./packages/git.nix
       ./packages/nixvim.nix
+      ./packages/tmux.nix
     ];
 
     home.stateVersion = "23.05";
@@ -33,7 +34,6 @@ in {
       htop
       neofetch
       powertop
-      tmux
       trash-cli
       tree
       wget
