@@ -12,6 +12,9 @@
       bind 'set vi-cmd-mode-string "\1\e[3 q\2"'
       bind 'set vi-ins-mode-string "\1\e[6 q\2"'
       bind 'set show-mode-in-prompt on'
+
+      # print system info
+      neofetch
     '';
 
     shellAliases = {

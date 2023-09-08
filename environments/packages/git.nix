@@ -11,6 +11,10 @@
     difftastic.enable = true;
 
     extraConfig = {
+      apply = {
+        whitespace = "fix";
+      };
+
       core = {    
         # error on trailing whitespace
         whitespace = "trailing-space,space-before-tab";
@@ -52,7 +56,11 @@
       cob = "checkout -b";
 
       d = "diff";
+      dc = "diff --check";
+      dn = "diff --no-index";
+      dnw = "diff --no-index --word-diff";
       ds = "diff --staged";
+      dsc = "diff --staged --check";
       dsw = "diff --staged --word-diff";
       dw = "diff --word-diff";
 

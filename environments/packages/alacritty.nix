@@ -18,7 +18,7 @@
 
       # use nerd font for symbols
       font = {
-        size = 10.0;
+        size = 12.0;
         normal.family = "Lilex Nerd Font";
         bold.family = "Lilex Nerd Font";
         italic.family = "Lilex Nerd Font";
@@ -31,7 +31,7 @@
         program = "bash";
         args = [
           "-c"
-          "tmux"
+          "tmux new-session -A -s main"
         ];
       };
 
