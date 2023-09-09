@@ -26,6 +26,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/wm/keybindings" = {
+      minimize = [];
       switch-applications = [];
       switch-applications-backward = [];
       switch-windows = [ "<Alt>Tab" ];
@@ -34,7 +35,7 @@ with lib.hm.gvariant;
 
     "org/gnome/shell" = {
       disabled-extensions = [ "window-list@gnome-shell-extensions.gcampax.github.com" "windowsNavigator@gnome-shell-extensions.gcampax.github.com" "workspace-indicator@gnome-shell-extensions.gcampax.github.com" "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "native-window-placement@gnome-shell-extensions.gcampax.github.com" ];
-      enabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
+      enabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" "forge@jmmaranan.com" ];
     };
 
   };

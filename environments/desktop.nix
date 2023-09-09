@@ -58,6 +58,7 @@
       element-desktop
       firefox
       gnome.gnome-tweaks
+      gnomeExtensions.forge
       signal-desktop
       slack
       spotify
