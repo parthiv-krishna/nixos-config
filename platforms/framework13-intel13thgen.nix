@@ -56,6 +56,6 @@
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   # fingerprint
-  services.fprintd.enable = lib.mkDefault true;
+  # services.fprintd.enable = lib.mkDefault true;
 }
 
