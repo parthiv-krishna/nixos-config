@@ -5,27 +5,29 @@
    ./common.nix
   ];
 
-  services.xserver = {
-    enable = true;
+  services = {
+    xserver = {
+      enable = true;
 
-    excludePackages = with pkgs; [
-      xterm
-    ];
+      excludePackages = with pkgs; [
+        xterm
+      ];
 
-    # KDE Plasma 5
-    # displayManager = {
-    #   sddm.enable = true;
-    #   defaultSession = "plasmawayland"; # use Wayland
-    # };
-    # desktopManager.plasma5.enable = true;
+      # KDE Plasma 5
+      # displayManager = {
+      #   sddm.enable = true;
+      #   defaultSession = "plasmawayland"; # use Wayland
+      # };
+      # desktopManager.plasma5.enable = true;
 
-    # GNOME
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+      # GNOME
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
 
-    # Configure keymap
-    layout = "us";
-    xkbVariant = "";
+      # Configure keymap
+      layout = "us";
+      xkbVariant = "";
+    };
   };
 
   environment.gnome.excludePackages = (with pkgs; [
@@ -59,6 +61,7 @@
       firefox
       gnome.gnome-tweaks
       gnomeExtensions.forge
+      joplin-desktop
       signal-desktop
       slack
       spotify
