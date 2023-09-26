@@ -31,6 +31,7 @@ in {
 
     # core packages useful on any system
     home.packages = with pkgs; [
+      busybox
       htop
       neofetch
       powertop
