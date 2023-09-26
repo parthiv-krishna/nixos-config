@@ -33,10 +33,17 @@ with lib.hm.gvariant;
       switch-windows-backward = [ "<Shift><Alt>Tab" ];
     };
 
+    "org/gnome/desktop/wm/preferences" = {
+      auto-raise = true;
+    };
+
     "org/gnome/shell" = {
       disabled-extensions = [ "window-list@gnome-shell-extensions.gcampax.github.com" "windowsNavigator@gnome-shell-extensions.gcampax.github.com" "workspace-indicator@gnome-shell-extensions.gcampax.github.com" "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "native-window-placement@gnome-shell-extensions.gcampax.github.com" ];
       enabled-extensions = [ "apps-menu@gnome-shell-extensions.gcampax.github.com" "forge@jmmaranan.com" ];
     };
 
+    "org/gnome/shell/extensions/forge" = {
+      tiling-mode-enabled = true;
+    };
   };
 }
