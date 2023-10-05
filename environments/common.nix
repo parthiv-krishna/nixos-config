@@ -31,14 +31,16 @@ in {
 
     # core packages useful on any system
     home.packages = with pkgs; [
-      busybox
       htop
+      killall
       neofetch
       powertop
       trash-cli
       tree
+      unzip
       wget
       xclip
+      zip
     ];
   };
 }
