@@ -17,6 +17,14 @@ in {
 
   # unfortunately I still use some unfree software. working on it.
   nixpkgs.config.allowUnfree = true;
+  
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  # environment variables
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 
   home-manager.users.parthiv = {
     imports = [

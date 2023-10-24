@@ -5,6 +5,7 @@
     enable = true;
 
     keyMode = "vi";
+    shortcut = "a";
 
     plugins = with pkgs.tmuxPlugins; [
       fuzzback
@@ -16,6 +17,17 @@
       urlview
       vim-tmux-navigator
     ];
+
+    extraConfig = ''
+      bind - split-window -c "#{pane_current_path}"
+      bind _ split-window -c "#{pane_current_path}"
+      bind | split-window -h -c "#{pane_current_path}"
+      unbind-key %
+      unbind-key \"
+
+      unbind-key C-a
+      bind C-a send-key C-a
+    '';
   };
 }
 

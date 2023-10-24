@@ -46,7 +46,7 @@ in {
       gitsigns.enable = true;
       lightline.enable = true;
       mark-radar.enable = true;
-      neo-tree.enable = true;
+      nvim-tree.enable = true;
       telescope.enable = true;
       tmux-navigator.enable = true;
       todo-comments.enable = true;
