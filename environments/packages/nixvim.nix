@@ -55,6 +55,7 @@ in {
       # languages
       markdown-preview.enable = true;
       nix.enable = true;
+      rust-tools.enable = true;
     };
   };
 }
