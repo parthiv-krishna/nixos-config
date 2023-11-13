@@ -42,9 +42,12 @@ in {
     plugins = {
       # tools
       barbar.enable = true;
+      coq-nvim.enable = true;
       fugitive.enable = true;
       gitsigns.enable = true;
       lightline.enable = true;
+      lsp.enable = true;
+      lsp-lines.enable = true;
       mark-radar.enable = true;
       nvim-tree.enable = true;
       telescope.enable = true;
