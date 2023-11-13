@@ -62,6 +62,7 @@
       gnome.gnome-tweaks
       gnomeExtensions.forge
       joplin-desktop
+      onlyoffice-bin
       signal-desktop
       slack
       spotify
