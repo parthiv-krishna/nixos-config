@@ -60,5 +60,19 @@ in {
       nix.enable = true;
       rust-tools.enable = true;
     };
+
+    maps.normal = {
+      "j" = "gj";
+      "k" = "gk";
+      "gj" = "j";
+      "gk" = "k";
+    };
+
+    maps.normalVisualOp = {
+      "<down>" = "g<down>";
+      "<up>" = "g<up>";
+      "g<down>" = "<down>";
+      "g<up>" = "<up>";
+    };
   };
 }
