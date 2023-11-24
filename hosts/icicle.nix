@@ -1,10 +1,10 @@
-# icicle (Framework 13, 13th Gen Intel) configuration
+# icicle (Framework 13, AMD Ryzen 7040) configuration
 
 { ... }: {
   networking.hostName = "icicle";
 
   imports = [
-    ../platforms/framework13-intel13thgen.nix
+    ../platforms/framework13-amd7040.nix
     ../environments/desktop.nix
   ];
 }
