@@ -62,10 +62,14 @@
       gnome.gnome-tweaks
       gnomeExtensions.forge
       joplin-desktop
+      kicad
+      musescore
       onlyoffice-bin
+      protonvpn-gui
       signal-desktop
       slack
       spotify
+      steam
       thunderbird
       vlc
       zoom-us
