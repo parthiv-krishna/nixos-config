@@ -1,8 +1,12 @@
 # core system packages
 
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
+  unstable = import
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/nixos-unstable)
+    # reuse the current configuration
+    { config = config.nixpkgs.config; };
 in {
   imports = [
     (import "${home-manager}/nixos")
@@ -37,12 +41,16 @@ in {
 
     home.stateVersion = "23.05";
 
-    # core packages useful on any system
+      # core packages useful on any system
     home.packages = with pkgs; [
+      gnumake
       htop
       killall
       neofetch
       powertop
+      protonvpn-cli
+      unstable.rclone
+      sshfs
       trash-cli
       tree
       unzip
