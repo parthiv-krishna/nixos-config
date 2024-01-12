@@ -48,6 +48,17 @@
     yelp
   ]);
 
+  # iOS
+  services.usbmuxd.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    libimobiledevice
+    ifuse # optional, to mount using 'ifuse'
+  ];
+
+  # fix warning in firefox about speech synthesis
+  nixpkgs.config.firefox.speechSynthesisSupport = true;
+
   home-manager.users.parthiv = {
     imports = [
       ./packages/alacritty.nix
@@ -59,6 +70,7 @@
       discord
       element-desktop
       firefox
+      gcc-arm-embedded-9
       gnome.gnome-tweaks
       gnomeExtensions.forge
       joplin-desktop
