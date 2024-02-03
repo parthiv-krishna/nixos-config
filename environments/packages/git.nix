@@ -3,6 +3,7 @@
 { ... }: {
   programs.git = {
     enable = true;
+    lfs.enable = true;
 
     userName = "Parthiv Krishna";
     userEmail = "parthiv-krishna@users.noreply.github.com";
