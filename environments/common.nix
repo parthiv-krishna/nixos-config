@@ -43,10 +43,13 @@ in {
 
       # core packages useful on any system
     home.packages = with pkgs; [
+      bear
+      ccls
       gnumake
       htop
       killall
       neofetch
+      nixd
       powertop
       protonvpn-cli
       unstable.rclone

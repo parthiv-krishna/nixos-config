@@ -36,43 +36,140 @@ in {
     };
 
     colorschemes = {
-      ayu.enable = true;
+      one.enable = true;
     };
 
     plugins = {
-      # tools
+      # editor view
+      airline.enable = true;
       barbar.enable = true;
-      coq-nvim.enable = true;
-      fugitive.enable = true;
-      gitsigns.enable = true;
-      lightline.enable = true;
-      lsp.enable = true;
-      lsp-lines.enable = true;
-      mark-radar.enable = true;
-      nvim-tree.enable = true;
-      telescope.enable = true;
-      tmux-navigator.enable = true;
+      nvim-tree = {
+        enable = true;
+
+        # reclaim Ctrl-K for tmux navigator
+        onAttach = {
+            __raw = ''
+              function(bufnr)
+                local function opts(desc)
+                  return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+                end
+              
+                local api = require("nvim-tree.api")
+                api.config.mappings.default_on_attach(bufnr)
+                vim.keymap.set("n", "<C-K>", ":TmuxNavigateUp<CR>", opts("Refresh"))
+              end
+            '';
+          };
+      };
       todo-comments.enable = true;
+
+      # completion
+      lspkind.enable = true;
+      nvim-cmp = {
+        enable = true;
+        mapping = {
+          "<C-Space>" = "cmp.mapping.complete()";
+          "<ESC>" = "cmp.mapping.close()";
+          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<S-Tab>" = {
+            action = "cmp.mapping.select_prev_item()";
+            modes = [
+              "i"
+              "s"
+            ];
+          };
+          "<Tab>" = {
+            action = "cmp.mapping.select_next_item()";
+            modes = [
+              "i"
+              "s"
+            ];
+          };
+        };
+        window.documentation.border = [
+          "╭" "─" "╮" "│" "╯" "─" "╰" "│"
+        ];
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "cmdline"; }
+          { name = "path"; }
+          { name = "buffer"; }
+        ];
+      };
+      cmp-buffer.enable = true;
+      cmp-nvim-lsp.enable = true;
+      cmp-nvim-lua.enable = true; 
+      cmp-cmdline.enable = true;
+      cmp-path.enable = true;
+
+
       treesitter.enable = true;
 
-      # languages
+      # language server
+      clangd-extensions.enable = true;
+      lsp = {
+        enable = true;
+
+        enabledServers = [
+          "ccls"
+          "nixd"
+          "pylsp"
+        ];
+      };
+      lsp-lines.enable = true;
       markdown-preview.enable = true;
       nix.enable = true;
       rust-tools.enable = true;
+
+      # git
+      fugitive.enable = true;
+      gitsigns.enable = true;
+
+      # tmux navigator
+      tmux-navigator.enable = true;
     };
 
-    maps.normal = {
-      "j" = "gj";
-      "k" = "gk";
-      "gj" = "j";
-      "gk" = "k";
-    };
-
-    maps.normalVisualOp = {
-      "<down>" = "g<down>";
-      "<up>" = "g<up>";
-      "g<down>" = "<down>";
-      "g<up>" = "<up>";
-    };
+    keymaps = [
+      # swap gj/j and gk/k
+      {
+        key = "j";
+        action = "gj";
+        mode = "n";
+      }
+      {
+        key = "k";
+        action = "gk";
+        mode = "n";
+      }
+      {
+        key = "gj";
+        action = "j";
+        mode = "n";
+      }
+      {
+        key = "gk";
+        action = "k";
+        mode = "n";
+      }
+      # swap g<down>/<down> and g<up>/<up>
+      {
+        key = "<down>";
+        action = "g<down>";
+      }
+      {
+        key = "<up>";
+        action = "g<up>";
+      }
+      {
+        key = "g<up>";
+        action = "<up>";
+      }
+      {
+        key = "g<down>";
+        action = "<down>";
+      }
+    ];
   };
 }
