@@ -20,8 +20,9 @@
 
     extraConfig = ''
       bind - split-window -c "#{pane_current_path}"
-      bind _ split-window -c "#{pane_current_path}"
-      bind | split-window -h -c "#{pane_current_path}"
+      bind _ split-window -b -c "#{pane_current_path}"
+      bind \\ split-window -h -c "#{pane_current_path}"
+      bind | split-window -h -b -c "#{pane_current_path}"
       unbind-key %
       unbind-key \"
 
