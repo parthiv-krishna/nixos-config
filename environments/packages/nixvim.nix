@@ -4,7 +4,7 @@
 let
   nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
-    ref = "nixos-23.05";
+    ref = "nixos-23.11";
   });
 in {
   imports = [
@@ -36,7 +36,7 @@ in {
     };
 
     colorschemes = {
-      gruvbox.enable = true;
+      ayu.enable = true;
     };
 
     plugins = {
