@@ -41,7 +41,7 @@ in {
 
     home.stateVersion = "23.05";
 
-      # core packages useful on any system
+    # core packages useful on any system
     home.packages = with pkgs; [
       bear
       ccls

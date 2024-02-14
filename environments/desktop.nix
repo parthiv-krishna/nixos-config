@@ -66,6 +66,7 @@
     ];
 
     home.packages = with pkgs; [
+      brave
       dconf2nix
       discord
       element-desktop

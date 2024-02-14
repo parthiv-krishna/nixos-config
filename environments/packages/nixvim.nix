@@ -35,8 +35,11 @@ in {
       tabstop = 2;
     };
 
-    colorschemes = {
-      one.enable = true;
+    colorschemes = { one.enable = true;
+    };
+
+    globals = {
+      mapleader = "\\";
     };
 
     plugins = {
@@ -44,22 +47,22 @@ in {
       airline.enable = true;
       barbar.enable = true;
       nvim-tree = {
-        enable = true;
+      enable = true;
 
-        # reclaim Ctrl-K for tmux navigator
-        onAttach = {
-            __raw = ''
-              function(bufnr)
-                local function opts(desc)
-                  return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-                end
-              
-                local api = require("nvim-tree.api")
-                api.config.mappings.default_on_attach(bufnr)
-                vim.keymap.set("n", "<C-K>", ":TmuxNavigateUp<CR>", opts("Refresh"))
-              end
-            '';
-          };
+      # reclaim Ctrl-K for tmux navigator
+      onAttach = {
+        __raw = ''
+          function(bufnr)
+            local function opts(desc)
+              return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+            end
+          
+            local api = require("nvim-tree.api")
+            api.config.mappings.default_on_attach(bufnr)
+            vim.keymap.set("n", "<C-K>", ":TmuxNavigateUp<CR>", opts("Refresh"))
+          end
+          '';
+        };
       };
       todo-comments.enable = true;
 
@@ -69,7 +72,7 @@ in {
         enable = true;
         mapping = {
           "<C-Space>" = "cmp.mapping.complete()";
-          "<ESC>" = "cmp.mapping.close()";
+          "<C-S>" = "cmp.mapping.close()";
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<CR>" = "cmp.mapping.confirm({ select = true })";
@@ -169,6 +172,11 @@ in {
       {
         key = "g<down>";
         action = "<down>";
+      }
+      # Toggle lsp lines
+      {
+        key = "<Leader>l";
+        action = ":lua require('lsp_lines').toggle()<CR>";
       }
     ];
   };
