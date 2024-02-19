@@ -75,7 +75,7 @@ in {
           "<C-S>" = "cmp.mapping.close()";
           "<C-d>" = "cmp.mapping.scroll_docs(-4)";
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<CR>" = "cmp.mapping.confirm({ select = false })";
           "<S-Tab>" = {
             action = "cmp.mapping.select_prev_item()";
             modes = [
