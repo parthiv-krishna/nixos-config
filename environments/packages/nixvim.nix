@@ -91,14 +91,15 @@ in {
             ];
           };
         };
-        window.documentation.border = [
-          "╭" "─" "╮" "│" "╯" "─" "╰" "│"
-        ];
+        snippet.expand = "luasnip";
         sources = [
           { name = "nvim_lsp"; }
           { name = "cmdline"; }
           { name = "path"; }
           { name = "buffer"; }
+        ];
+        window.documentation.border = [
+          "╭" "─" "╮" "│" "╯" "─" "╰" "│"
         ];
       };
       cmp-buffer.enable = true;
@@ -106,6 +107,7 @@ in {
       cmp-nvim-lua.enable = true; 
       cmp-cmdline.enable = true;
       cmp-path.enable = true;
+      luasnip.enable = true;
 
 
       treesitter.enable = true;
