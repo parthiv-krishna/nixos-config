@@ -16,7 +16,11 @@ in {
   users.users.parthiv = {
     isNormalUser = true;
     description = "Parthiv Krishna";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "dialout"
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   # unfortunately I still use some unfree software. working on it.
