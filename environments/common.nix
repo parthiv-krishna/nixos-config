@@ -53,6 +53,7 @@ in {
       htop
       killall
       neofetch
+      minicom
       nixd
       powertop
       protonvpn-cli
