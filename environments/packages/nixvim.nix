@@ -181,6 +181,11 @@ in {
         key = "<Leader>l";
         action = ":lua require('lsp_lines').toggle()<CR>";
       }
+      # remove search highlight
+      {
+        key = "<Leader>n";
+        action = ":noh<CR>";
+      }
     ];
   };
 }
