@@ -35,7 +35,8 @@ in {
       tabstop = 2;
     };
 
-    colorschemes = { one.enable = true;
+    colorschemes = {
+      one.enable = true;
     };
 
     globals = {

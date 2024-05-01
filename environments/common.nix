@@ -25,6 +25,9 @@ in {
 
   # unfortunately I still use some unfree software. working on it.
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "nix-2.16.2"
+  ];
   
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -49,16 +52,17 @@ in {
     home.packages = with pkgs; [
       bear
       ccls
+      fastfetch
       gnumake
       htop
       killall
-      neofetch
       minicom
       nixd
       powertop
       protonvpn-cli
       unstable.rclone
       sshfs
+      ripgrep
       trash-cli
       tree
       unzip

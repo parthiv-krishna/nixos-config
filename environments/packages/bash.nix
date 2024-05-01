@@ -14,10 +14,11 @@
       bind 'set show-mode-in-prompt on'
 
       # print system info
-      neofetch
+      fastfetch
     '';
 
     shellAliases = {
+      open = "xdg-open";
       rm = "echo \"rm is disabled, please use trash\"";
     };
 

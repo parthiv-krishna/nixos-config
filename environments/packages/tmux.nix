@@ -9,11 +9,11 @@
 
     plugins = with pkgs.tmuxPlugins; [
       fuzzback
-      gruvbox
-      prefix-highlight
+      nord
       resurrect
       sensible
       sessionist
+      sidebar
       urlview
       vim-tmux-navigator
     ];

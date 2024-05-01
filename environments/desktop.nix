@@ -1,10 +1,15 @@
 # desktop environment configuration
 
-{ pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  unstable = import
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/nixos-unstable)
+    # reuse the current configuration
+    { config = config.nixpkgs.config; };
+in {
   imports = [
    ./common.nix
   ];
-
   services = {
     xserver = {
       enable = true;
@@ -66,6 +71,7 @@
     ];
 
     home.packages = with pkgs; [
+      brave
       dconf2nix
       discord
       element-desktop
@@ -77,6 +83,7 @@
       kicad
       musescore
       onlyoffice-bin
+      unstable.protonmail-desktop
       protonvpn-gui
       signal-desktop
       slack
