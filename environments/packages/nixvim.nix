@@ -187,6 +187,16 @@ in {
         key = "<Leader>n";
         action = ":noh<CR>";
       }
+      # vertical split
+      {
+        key = "<Leader>v";
+        action = ":vs<CR>";
+      }
+      # horizontal split
+      {
+        key = "<Leader>h";
+        action = ":sv<CR>";
+      }
     ];
   };
 }
